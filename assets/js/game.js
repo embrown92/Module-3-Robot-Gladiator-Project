@@ -1,5 +1,3 @@
-var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enyer 'FIGHT' or 'SKIP' to choose.");
-
 
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
@@ -12,9 +10,13 @@ var enemyName = "Roborto";
 var enemyHealth = 50;
 var enemyAttack = 12;
 
+//fight function
 var fight = function () {
     // Alert players that they are starting the round
     window.alert("Welcome to Robot Gladiators!");
+
+    // ask player if they'd like to fight or run
+    var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enyer 'FIGHT' or 'SKIP' to choose.");
 
     // if player choses to fight, then fight
     if (promptFight === "fight" || promptFight === "FIGHT") {
@@ -58,9 +60,11 @@ var fight = function () {
         else {
             fight();
         }
-    }
+    // if player did not chose 1 or 2 in prompt
+    } else {
+        window.alert("You need to pick a valid option. Try again!");
+      }
 };
 
-
-
+// run fight function to start game
 fight();
